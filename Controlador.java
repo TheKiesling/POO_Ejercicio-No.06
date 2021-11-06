@@ -44,7 +44,8 @@ public class Controlador {
                     int productoProbar = vista.pedirProducto();
                     String[] funciones = tienda.funciones(productoProbar);
                     int accion = vista.pedirAccion(funciones);
-                    String accion = tienda.probar(productoProbar, accion);
+                    String cosa = vista.pedirCosa(accion);
+                    String accionProducto = tienda.probar(productoProbar, accion, cosa);
                     vista.accion(accion);
                 }
 

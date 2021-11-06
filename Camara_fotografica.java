@@ -1,4 +1,7 @@
 public class Camara_fotografica implements Producto, Movible, Camara, Reproductor{
+    public Camara_fotografica(){
+        
+    }
     public String[] funciones(){
         
     }
