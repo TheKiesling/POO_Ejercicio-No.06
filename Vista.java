@@ -86,6 +86,49 @@ public class Vista {
     //****************************************************************
 
     /*****************************************************************
+     * menuOpciones: despliega el menú y recibe la opción del usuario
+     * @return opcion
+     * @throws Exception 
+     * @throws InputMismatchException
+     */
+    public int menuOpcionesProducto() throws Exception, InputMismatchException{
+        int opcion = -1;
+        boolean bandera = false;
+
+        try{
+            //Despliegue de menú de opciones  
+            System.out.println("\n\n¿Que tipo de producto desea ingresar?");
+            System.out.println("\n\n1. Smartphone");
+            System.out.println("2. Telefono celular");
+            System.out.println("3. Telefono fijo");
+            System.out.println("4. Camara fotografica");
+            System.out.println("5. Computador de escritorio");
+            System.out.println("6. Laptop");
+            System.out.println("7. Smart TV");
+            System.out.println("8. Tablet");
+            System.out.println("9. Smartwatch\n\n");
+
+            while (!bandera){ //Ciclo para evaluar si se ingresó una opcion válida
+                opcion = Integer.parseInt(scan.nextLine());
+                System.out.println();
+                if (opcion > 0 && opcion <= 9) //Opciones válidas
+                    bandera = true;
+                else{ 
+                    System.out.println("ERROR: Ingrese una de las opciones indicadas anteriormente"); 
+                }
+            }
+        } catch (InputMismatchException e){ //Error de ingreso por input
+            String s = "Error de conversión con scan.nextInt() " + opcion + ": " + e.toString(); 
+            throw new InputMismatchException(s);
+        } catch (Exception e){ //Captura cualquier error que no sea de input
+            String s = "Ocurrió un error con scan.nextInt() " +  opcion + ": " + e.toString();
+            throw new Exception(s);
+        }
+        return opcion;
+    }
+    //****************************************************************
+
+    /*****************************************************************
      * despedida: imprime un mensaje de despedida
      */
     public void despedida(){
@@ -205,25 +248,6 @@ public class Vista {
             throw new Exception(s);
         }
         return marca;
-    }
-    //****************************************************************
-
-    /*****************************************************************
-     * pedirFechaFabricacion: pide la fecha de fabricación del producto
-     * @return fechaFabricacion
-     * @throws Exception
-     */
-    public String pedirFechaFabricacion() throws Exception{
-        String fechaFabricacion = "";
-        try{
-            System.out.println("Ingrese la fecha de fabricacion del producto (dd/mm/aaaa)");
-            fechaFabricacion = scan.nextLine();
-            System.out.println(); 
-        } catch (Exception e){ //Captura cualquier error que no sea de input
-            String s = "Ocurrió un error con scan.nextLine() " +  fechaFabricacion + ": " + e.toString();
-            throw new Exception(s);
-        }
-        return fechaFabricacion;
     }
     //****************************************************************
 
