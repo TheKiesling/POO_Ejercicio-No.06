@@ -1,18 +1,33 @@
 public class Telefono_fijo implements Producto, Telefono{
-    public String[] funciones(){
-        
-    }
-    public String probar(){
+    int precio=0;
+    String serie="";
+    String marca="";
+    String fechaFabricacion="";
+    String marcadorAR="";
+    public Telefono_fijo (String marca,String serie,String fechaFabricacion,int precio,String marcadorAR){
+        this.marca = marca;
+        this.serie = serie;
+        this.precio=precio;
+        this.fechaFabricacion=fechaFabricacion;
+        this.marcadorAR=marcadorAR;
 
+    }
+    public String[] funciones(){
+        String[] funciones={"Llamar"};
+        return funciones;
+    }
+    public String probar(int accion, String cosa){
+        String act_string="";
+        if(accion==1){
+            act_string= llamar(cosa);
+        }
+        return act_string;
     }
     public int getPrecio(){
-
+        return precio;
     }
     public String getMarca(){
-        
-    }
-    public String mover(String lugar){
-        return "Se ha movido el SmartPhone de marca: "+marca+", hacia "+lugar+" (marcador AR: "+marcadorAR+")";
+        return marca;
     }
     public String llamar(String numero){
         return "Se ha llamado al numero: "+numero+"con Telefono fijo de marca: "+marca+" (marcador AR: "+marcadorAR+")";

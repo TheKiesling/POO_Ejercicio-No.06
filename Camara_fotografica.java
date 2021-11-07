@@ -1,18 +1,37 @@
 public class Camara_fotografica implements Producto, Movible, Camara, Reproductor{
-    public Camara_fotografica(){
-        
+    int precio=0;
+    String serie="";
+    String marca="";
+    String fechaFabricacion="";
+    String marcadorAR="";
+    public Camara_fotografica (String marca,String serie,String fechaFabricacion,int precio,String marcadorAR){
+        this.marca = marca;
+        this.serie = serie;
+        this.precio=precio;
+        this.fechaFabricacion=fechaFabricacion;
+        this.marcadorAR=marcadorAR;
+
     }
     public String[] funciones(){
-        
+        String[] funciones={"Mover", "Fotografiar", "Reproducir"};
+        return funciones;
     }
-    public String probar(){
-
+    public String probar(int accion, String cosa){
+        String act_string="";
+        if(accion==1){
+            act_string= mover(cosa);
+        }else if(accion==2){
+            act_string= fotografiar(cosa);
+        }else if(accion==3){
+            act_string= reproducir(cosa);
+        }
+        return act_string;
     }
     public int getPrecio(){
-
+        return precio;
     }
     public String getMarca(){
-        
+        return marca;
     }
     public String fotografiar(String objeto){
         return "Se ha fotografiado un@: "+objeto+" con Camara fotografica de marca"+marca+" (marcador AR: "+marcadorAR+")";

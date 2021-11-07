@@ -1,15 +1,39 @@
 public class Tablet implements Producto, Movible, Camara, Navegador, Reproductor{
-    public String[] funciones(){
-        
-    }
-    public String probar(){
+    int precio=0;
+    String serie="";
+    String marca="";
+    String fechaFabricacion="";
+    String marcadorAR="";
+    public Tablet (String marca,String serie,String fechaFabricacion,int precio,String marcadorAR){
+        this.marca = marca;
+        this.serie = serie;
+        this.precio=precio;
+        this.fechaFabricacion=fechaFabricacion;
+        this.marcadorAR=marcadorAR;
 
+    }
+    public String[] funciones(){
+        String[] funciones={"Mover", "Fotografiar", "Reproducir", "Navegar"};
+        return funciones;
+    }
+    public String probar(int accion, String cosa){
+        String act_string="";
+        if(accion==1){
+            act_string= mover(cosa);
+        }else if(accion==2){
+            act_string= fotografiar(cosa);
+        }else if(accion==3){
+            act_string= reproducir(cosa);
+        }else if(accion==4){
+            act_string= navegar(cosa);
+        }
+        return act_string;
     }
     public int getPrecio(){
-
+        return precio;
     }
     public String getMarca(){
-        
+        return marca;
     }
     public String mover(String lugar){
         return "Se ha movido la Tablet, de marca: "+marca+", hacia "+lugar+" (marcador AR: "+marcadorAR+")";

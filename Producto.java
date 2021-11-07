@@ -5,7 +5,7 @@ public interface Producto {
     String fechaFabricacion="";
     String marcadorAR="";
     public String[] funciones();
-    public String probar();
+    public String probar(int accion, String cosa);
     public int getPrecio();
     public String getMarca();
 }
