@@ -4,13 +4,14 @@ public class Laptop implements Producto, Movible, Reproductor, Navegador, Consol
     String marca="";
     String fechaFabricacion="";
     String marcadorAR="";
+    String tipo="";
     public Laptop (String marca,String serie,String fechaFabricacion,int precio,String marcadorAR){
         this.marca = marca;
         this.serie = serie;
         this.precio=precio;
         this.fechaFabricacion=fechaFabricacion;
         this.marcadorAR=marcadorAR;
-
+        tipo="Laptop";
     }
     public String[] funciones(){
         String[] funciones={"Reproducir","Mover", "Jugar", "Navegar"};
@@ -34,6 +35,12 @@ public class Laptop implements Producto, Movible, Reproductor, Navegador, Consol
     }
     public String getMarca(){
         return marca;
+    }
+    public String getFecha(){
+        return fechaFabricacion;
+    }
+    public String getTipo(){
+        return tipo;
     }
     public String reproducir(String video){
         return "Se ha reproducido el video: "+video+" con Laptop de marca"+marca+" (marcador AR: "+marcadorAR+")";

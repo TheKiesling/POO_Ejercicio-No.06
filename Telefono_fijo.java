@@ -4,13 +4,14 @@ public class Telefono_fijo implements Producto, Telefono{
     String marca="";
     String fechaFabricacion="";
     String marcadorAR="";
+    String tipo="";
     public Telefono_fijo (String marca,String serie,String fechaFabricacion,int precio,String marcadorAR){
         this.marca = marca;
         this.serie = serie;
         this.precio=precio;
         this.fechaFabricacion=fechaFabricacion;
         this.marcadorAR=marcadorAR;
-
+        tipo="Telefono Fijo";
     }
     public String[] funciones(){
         String[] funciones={"Llamar"};
@@ -28,6 +29,12 @@ public class Telefono_fijo implements Producto, Telefono{
     }
     public String getMarca(){
         return marca;
+    }
+    public String getFecha(){
+        return fechaFabricacion;
+    }
+    public String getTipo(){
+        return tipo;
     }
     public String llamar(String numero){
         return "Se ha llamado al numero: "+numero+"con Telefono fijo de marca: "+marca+" (marcador AR: "+marcadorAR+")";

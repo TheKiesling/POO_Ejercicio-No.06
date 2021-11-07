@@ -19,6 +19,7 @@ public class Tienda {
     //---------------------------PROPIEDADES--------------------------
     private File archivo = new File(".\\tienda.txt");
     private ArrayList<Producto> productos = new ArrayList<Producto>();
+    private ArrayList<Producto> carrito = new ArrayList<Producto>();
     //---------------------------PROPIEDADES--------------------------
 
     /*****************************************************************
@@ -45,23 +46,23 @@ public class Tienda {
 
                         //Instancia de producto
                         if (i == 0) 
-                            producto = new Smartphone();
+                            producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
                         if (i == 1)
-                            producto = new Telefono_celular();
+                            producto = new Telefono_celular(marca,serie,fechaFabricacion,precio,marcadorAR);
                         if (i == 2) 
-                            producto = new Telefono_fijo();
+                            producto = new Telefono_fijo(marca,serie,fechaFabricacion,precio,marcadorAR);
                         if (i == 3)
-                            producto = new Camara_fotografica();
+                            producto = new Camara_fotografica(marca,serie,fechaFabricacion,precio,marcadorAR);
                         if (i == 4) 
-                            producto = new Pc();
+                            producto = new Pc(marca,serie,fechaFabricacion,precio,marcadorAR);
                         if (i == 5)
-                            producto = new Laptop();
+                            producto = new Laptop(marca,serie,fechaFabricacion,precio,marcadorAR);
                         if (i == 6) 
-                            producto = new Smart_tv();
+                            producto = new Smart_tv(marca,serie,fechaFabricacion,precio,marcadorAR);
                         if (i == 7)
-                            producto = new Tablet();
+                            producto = new Tablet(marca,serie,fechaFabricacion,precio,marcadorAR);
                         if (i == 8) 
-                            producto = new Smart_watch();
+                            producto = new Smart_watch(marca,serie,fechaFabricacion,precio,marcadorAR);
 
                         ingresarProducto(producto);
                     }
@@ -108,6 +109,38 @@ public class Tienda {
     public String probar(int producto, int accion, String cosa){
         Producto productoProbar = productos.get(producto);
         return productoProbar.probar(accion, cosa);
+    }
+    //*****************************************************************
+
+    /******************************************************************
+     * agregarCarro: Agrega producto al carro
+     * @param producto
+     */
+    public void agregarCarro(int producto){
+        Producto prod = productos.get(producto);
+        productos.remove(producto);
+        carrito.add(prod);
+    }
+    //*****************************************************************
+
+    /******************************************************************
+     * ordenar: Ordena los productos del carro
+     * @param estandar
+     * @return carro
+     */
+    public String ordenar(int estandar){
+        String carro="Carrito de compras: \n";
+        if(estandar==1){
+            Collections.sort(carrito,new SortPrecio());
+        }else if (estandar==2){
+            Collections.sort(carrito,new SortFecha());
+        }else if(estandar==3){
+            Collections.sort(carrito,new SortMarca());
+        }
+        for(int i=0;i<carrito.size();i++){
+            carro+=(i+1)+". Producto: "+carrito.get(i).getTipo()+" ,Fecha Fabricacion: "+carrito.get(i).getFecha()+" ,Marca:"+carrito.get(i).getMarca()+" ,Precio:"+carrito.get(i).getPrecio()+"\n";
+        }
+        return carro;
     }
     //*****************************************************************
 }

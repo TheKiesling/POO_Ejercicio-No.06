@@ -4,13 +4,14 @@ public class Smart_tv implements Producto, Navegador, Reproductor {
     String marca="";
     String fechaFabricacion="";
     String marcadorAR="";
+    String tipo="";
     public Smart_tv (String marca,String serie,String fechaFabricacion,int precio,String marcadorAR){
         this.marca = marca;
         this.serie = serie;
         this.precio=precio;
         this.fechaFabricacion=fechaFabricacion;
         this.marcadorAR=marcadorAR;
-
+        tipo="Smart TV";
     }
     public String[] funciones(){
         String[] funciones={"Reproducir", "Navegar"};
@@ -30,6 +31,12 @@ public class Smart_tv implements Producto, Navegador, Reproductor {
     }
     public String getMarca(){
         return marca;
+    }
+    public String getFecha(){
+        return fechaFabricacion;
+    }
+    public String getTipo(){
+        return tipo;
     }
     public String reproducir(String video){
         return "Se ha reproducido el video: "+video+" con SmartTV de marca"+marca+" (marcador AR: "+marcadorAR+")";

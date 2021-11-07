@@ -4,13 +4,14 @@ public class Pc implements Producto, Reproductor, Navegador, Consola{
     String marca="";
     String fechaFabricacion="";
     String marcadorAR="";
+    String tipo="";
     public Pc (String marca,String serie,String fechaFabricacion,int precio,String marcadorAR){
         this.marca = marca;
         this.serie = serie;
         this.precio=precio;
         this.fechaFabricacion=fechaFabricacion;
         this.marcadorAR=marcadorAR;
-
+        tipo="PC";
     }
     public String[] funciones(){
         String[] funciones={"Reproducir", "Jugar", "Navegar"};
@@ -32,6 +33,12 @@ public class Pc implements Producto, Reproductor, Navegador, Consola{
     }
     public String getMarca(){
         return marca;
+    }
+    public String getFecha(){
+        return fechaFabricacion;
+    }
+    public String getTipo(){
+        return tipo;
     }
     public String reproducir(String video){
         return "Se ha reproducido el video: "+video+" con PC de marca"+marca+" (marcador AR: "+marcadorAR+")";

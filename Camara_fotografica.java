@@ -4,12 +4,14 @@ public class Camara_fotografica implements Producto, Movible, Camara, Reproducto
     String marca="";
     String fechaFabricacion="";
     String marcadorAR="";
+    String tipo="";
     public Camara_fotografica (String marca,String serie,String fechaFabricacion,int precio,String marcadorAR){
         this.marca = marca;
         this.serie = serie;
         this.precio=precio;
         this.fechaFabricacion=fechaFabricacion;
         this.marcadorAR=marcadorAR;
+        tipo="Camara Fotografica";
 
     }
     public String[] funciones(){
@@ -32,6 +34,12 @@ public class Camara_fotografica implements Producto, Movible, Camara, Reproducto
     }
     public String getMarca(){
         return marca;
+    }
+    public String getFecha(){
+        return fechaFabricacion;
+    }
+    public String getTipo(){
+        return tipo;
     }
     public String fotografiar(String objeto){
         return "Se ha fotografiado un@: "+objeto+" con Camara fotografica de marca"+marca+" (marcador AR: "+marcadorAR+")";

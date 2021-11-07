@@ -4,13 +4,14 @@ public class Tablet implements Producto, Movible, Camara, Navegador, Reproductor
     String marca="";
     String fechaFabricacion="";
     String marcadorAR="";
+    String tipo="";
     public Tablet (String marca,String serie,String fechaFabricacion,int precio,String marcadorAR){
         this.marca = marca;
         this.serie = serie;
         this.precio=precio;
         this.fechaFabricacion=fechaFabricacion;
         this.marcadorAR=marcadorAR;
-
+        tipo="Tablet";
     }
     public String[] funciones(){
         String[] funciones={"Mover", "Fotografiar", "Reproducir", "Navegar"};
@@ -34,6 +35,12 @@ public class Tablet implements Producto, Movible, Camara, Navegador, Reproductor
     }
     public String getMarca(){
         return marca;
+    }
+    public String getFecha(){
+        return fechaFabricacion;
+    }
+    public String getTipo(){
+        return tipo;
     }
     public String mover(String lugar){
         return "Se ha movido la Tablet, de marca: "+marca+", hacia "+lugar+" (marcador AR: "+marcadorAR+")";

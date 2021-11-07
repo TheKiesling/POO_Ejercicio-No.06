@@ -4,13 +4,14 @@ public class Smart_watch implements Producto, Movible, Camara, Telefono{
     String marca="";
     String fechaFabricacion="";
     String marcadorAR="";
+    String tipo="";
     public Smart_watch (String marca,String serie,String fechaFabricacion,int precio,String marcadorAR){
         this.marca = marca;
         this.serie = serie;
         this.precio=precio;
         this.fechaFabricacion=fechaFabricacion;
         this.marcadorAR=marcadorAR;
-
+        tipo="Smart Watch";
     }
     public String[] funciones(){
         String[] funciones={"Mover", "Llamar", "Fotografiar"};
@@ -32,6 +33,12 @@ public class Smart_watch implements Producto, Movible, Camara, Telefono{
     }
     public String getMarca(){
         return marca;
+    }
+    public String getFecha(){
+        return fechaFabricacion;
+    }
+    public String getTipo(){
+        return tipo;
     }
     public String mover(String lugar){
         return "Se ha movido el SmartWatch, de marca: "+marca+", hacia "+lugar+" (marcador AR: "+marcadorAR+")";

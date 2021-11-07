@@ -4,13 +4,14 @@ public class Smartphone implements Producto, Movible, Telefono, Reproductor, Nav
     String marca="";
     String fechaFabricacion="";
     String marcadorAR="";
+    String tipo="";
     public Smartphone (String marca,String serie,String fechaFabricacion,int precio,String marcadorAR){
         this.marca = marca;
         this.serie = serie;
         this.precio=precio;
         this.fechaFabricacion=fechaFabricacion;
         this.marcadorAR=marcadorAR;
-
+        tipo="Smart Phone";
     }
     public String[] funciones(){
         String[] funciones={"Mover","Llamar", "Fotografiar", "Reproducir", "Navegar"};
@@ -36,6 +37,12 @@ public class Smartphone implements Producto, Movible, Telefono, Reproductor, Nav
     }
     public String getMarca(){
         return marca;
+    }
+    public String getFecha(){
+        return fechaFabricacion;
+    }
+    public String getTipo(){
+        return tipo;
     }
     public String mover(String lugar){
         return "Se ha movido el SmartPhone, de marca: "+marca+", hacia "+lugar+" (marcador AR: "+marcadorAR+")";

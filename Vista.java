@@ -25,9 +25,18 @@ public class Vista {
     }
     //****************************************************************
 
+     /*****************************************************************
+     * mostrar: Muestra listas
+     * @param s
+     */
+    public void mostrar(String s){
+        System.out.println(s);
+    }
+    //****************************************************************
+
     /*****************************************************************
      * error: captura errores y muestra el mensaje que se obtuvo
-     * @param e
+     * @param s
      */
     public void error(String s){
         System.out.println("Ha ocurrido un error : -- " + s); 

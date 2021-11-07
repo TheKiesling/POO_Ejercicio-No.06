@@ -33,11 +33,36 @@ public class Controlador {
                     String serie = vista.pedirSerie();
                     String marca = vista.pedirMarca();
                     String marcadorAR = vista.pedirMarcadorAR();
+                    String fechaFabricacion = vista.pedirFecha();
                     int opcionProducto = vista.menuOpcionesProducto();
                     if (opcionProducto == 1){
-                        producto = new Smartphone();
+                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
                     }
-
+                    if (opcionProducto == 2){
+                        producto = new Telefono_celular(marca,serie,fechaFabricacion,precio,marcadorAR);
+                    }
+                    if (opcionProducto == 3){
+                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                    }
+                    if (opcionProducto == 4){
+                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                    }
+                    if (opcionProducto == 5){
+                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                    }
+                    if (opcionProducto == 6){
+                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                    }
+                    if (opcionProducto == 7){
+                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                    }
+                    if (opcionProducto == 8){
+                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                    }
+                    if (opcionProducto == 9){
+                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                    }
+                    tienda.agregarProducto(producto);
                 }
 
                 if (opcion == 3){ //Probar producto
