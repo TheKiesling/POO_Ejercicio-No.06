@@ -20,7 +20,7 @@ public class Controlador {
             vista.bienvenida();
 
             int opcion = -1;
-            while (opcion != 8){
+            while (opcion != 9){
                 //Despliegue de las opciones del menú y su previa lectura de dicha opción
                 opcion = vista.menuOpciones();
 
@@ -62,7 +62,7 @@ public class Controlador {
                     if (opcionProducto == 9){
                         producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
                     }
-                    tienda.agregarProducto(producto);
+                    tienda.ingresarProducto(producto);
                 }
 
                 if (opcion == 3){ //Probar producto
@@ -71,7 +71,7 @@ public class Controlador {
                     int accion = vista.pedirAccion(funciones);
                     String cosa = vista.pedirCosa(accion);
                     String accionProducto = tienda.probar(productoProbar, accion, cosa);
-                    vista.accion(accion);
+                    vista.mostrar(accionProducto);
                 }
 
                 if (opcion == 4){ //Agregar al carrito
@@ -85,17 +85,24 @@ public class Controlador {
                     vista.mostrar(ordenar);
                 }
 
-                if (opcion == 6){ //Comprar 
+                if (opcion == 6){ //Eliminar del carrito
+                    String ordenar = tienda.ordenar(1);
+                    vista.mostrar(ordenar);
+                    int productoEliminar = vista.pedirProducto();
+                    tienda.eliminarProducto(productoEliminar);
+                }
+
+                if (opcion == 7){ //Comprar 
                     int productoComprar = vista.pedirProducto();
                     String factura = tienda.factura(productoComprar);
                     vista.mostrar(factura);
                 }
 
-                if(opcion == 7){ //Escribir
+                if(opcion == 8){ //Escribir
                     tienda.escribir();
                 }
 
-                if(opcion == 8) //Salir
+                if(opcion == 9) //Salir
                     vista.despedida();
             }
 

@@ -143,4 +143,13 @@ public class Tienda {
         return carro;
     }
     //*****************************************************************
+
+    /******************************************************************
+     * eliminarProducto: elimina un producto del carrito
+     * @param producto
+     */
+    public void eliminarProducto(int producto){
+        carrito.remove(producto);
+    }
+    //******************************************************************
 }

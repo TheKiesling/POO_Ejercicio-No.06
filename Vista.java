@@ -70,9 +70,10 @@ public class Vista {
             System.out.println("3. Probar Producto");
             System.out.println("4. Agregar Producto al carrito de compras");
             System.out.println("5. Ordenar carrito de compras");
-            System.out.println("6. Comprar Producto");
-            System.out.println("7. Escribir Archivo");
-            System.out.println("8. Salir\n\n");
+            System.out.println("6. Eliminar producto del carrito de compras");
+            System.out.println("7. Comprar Producto");
+            System.out.println("8. Escribir Archivo");
+            System.out.println("9. Salir\n\n");
 
             while (!bandera){ //Ciclo para evaluar si se ingresó una opcion válida
                 opcion = Integer.parseInt(scan.nextLine());
@@ -345,6 +346,37 @@ public class Vista {
             throw new Exception(s);
         }
         return opcion; 
+    }
+    //****************************************************************
+
+    /*****************************************************************
+     *  pedirCosa: Pide la cosa a interactuar
+     * @param accion
+     * @return cosa
+     * @throws Exception
+     */
+    public String pedirCosa(int accion) throws Exception{
+        String cosa = "";
+        try{
+            if(accion == 1)
+                System.out.println("Ingrese el objeto a fotografiar");
+            if(accion == 2)
+                System.out.println("Ingrese el juego a jugar");
+            if(accion == 3)
+                System.out.println("Ingrese el video a reproducir");
+            if(accion == 4)
+                System.out.println("Ingrese el numero a llamar");
+            if(accion == 5)
+                System.out.println("Ingrese el url para navegar");
+            if(accion == 6)
+                System.out.println("Ingrese la ubicacion para moverse");
+            cosa = scan.nextLine();
+            System.out.println(); 
+        } catch (Exception e){ //Captura cualquier error que no sea de input
+            String s = "Ocurrió un error con scan.nextLine() " +  cosa + ": " + e.toString();
+            throw new Exception(s);
+        }
+        return cosa;
     }
     //****************************************************************
 
