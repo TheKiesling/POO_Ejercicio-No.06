@@ -234,4 +234,15 @@ public class Tienda {
         return tienda;
     }
     //******************************************************************
+
+    /*******************************************************************
+     * tamanoTienda: devuelve un booleano que indica si el tamano de la tienda es mayor a 0
+     * @return tamano
+     */
+    public boolean tamanoTienda(){
+        if (productos.size() <= 0)
+            return false;
+        else return true;
+    }
+    //*******************************************************************
 }

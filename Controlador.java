@@ -66,14 +66,18 @@ public class Controlador {
                 }
 
                 if (opcion == 3){ //Probar producto
-                    String tiendaProductos = tienda.mostrarTienda();
-                    vista.mostrar(tiendaProductos);
-                    int productoProbar = vista.pedirProducto();
-                    String[] funciones = tienda.funciones(productoProbar);
-                    int accion = vista.pedirAccion(funciones);
-                    String cosa = vista.pedirCosa(accion);
-                    String accionProducto = tienda.probar(productoProbar, accion, cosa);
-                    vista.mostrar(accionProducto);
+                    if (tienda.tamanoTienda()){
+                        String tiendaProductos = tienda.mostrarTienda();
+                        vista.mostrar(tiendaProductos);
+                        int productoProbar = vista.pedirProducto();
+                        String[] funciones = tienda.funciones(productoProbar);
+                        int accion = vista.pedirAccion(funciones);
+                        String cosa = vista.pedirCosa(accion);
+                        String accionProducto = tienda.probar(productoProbar, accion, cosa);
+                        vista.mostrar(accionProducto);
+                    }
+                    else
+                        vista.tiendaInvalida();
                 }
 
                 if (opcion == 4){ //Agregar al carrito

@@ -584,6 +584,11 @@ public class Vista {
     }
     //****************************************************************
 
-
-
+    /*****************************************************************
+     * tiendaInvalida: dice que la tienda no tiene productos
+     */
+    public void tiendaInvalida(){
+        System.out.println("No hay productos en la tienda, no puede probar ninguno por el momento");
+    }
+    //***************************************************************
 }
