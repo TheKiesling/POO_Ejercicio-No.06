@@ -44,6 +44,12 @@ public class Smartphone implements Producto, Movible, Telefono, Reproductor, Nav
     public String getTipo(){
         return tipo;
     }
+    public String getSerie(){
+        return serie;
+    }
+    public String getMarcadorAR(){
+        return marcadorAR;
+    }
     public String mover(String lugar){
         return "Se ha movido el SmartPhone, de marca: "+marca+", hacia "+lugar+" (marcador AR: "+marcadorAR+")";
     }

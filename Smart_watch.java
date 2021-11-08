@@ -40,6 +40,12 @@ public class Smart_watch implements Producto, Movible, Camara, Telefono{
     public String getTipo(){
         return tipo;
     }
+    public String getSerie(){
+        return serie;
+    }
+    public String getMarcadorAR(){
+        return marcadorAR;
+    }
     public String mover(String lugar){
         return "Se ha movido el SmartWatch, de marca: "+marca+", hacia "+lugar+" (marcador AR: "+marcadorAR+")";
     }

@@ -11,4 +11,6 @@ public interface Producto{
     public String getMarca();
     public String getFecha();
     public String getTipo();
+    public String getSerie();
+    public String getMarcadorAR();
 }

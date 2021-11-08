@@ -40,6 +40,12 @@ public class Pc implements Producto, Reproductor, Navegador, Consola{
     public String getTipo(){
         return tipo;
     }
+    public String getSerie(){
+        return serie;
+    }
+    public String getMarcadorAR(){
+        return marcadorAR;
+    }
     public String reproducir(String video){
         return "Se ha reproducido el video: "+video+" con PC de marca"+marca+" (marcador AR: "+marcadorAR+")";
     }

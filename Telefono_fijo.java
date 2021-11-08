@@ -36,6 +36,12 @@ public class Telefono_fijo implements Producto, Telefono{
     public String getTipo(){
         return tipo;
     }
+    public String getSerie(){
+        return serie;
+    }
+    public String getMarcadorAR(){
+        return marcadorAR;
+    }
     public String llamar(String numero){
         return "Se ha llamado al numero: "+numero+"con Telefono fijo de marca: "+marca+" (marcador AR: "+marcadorAR+")";
     }

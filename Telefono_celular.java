@@ -38,6 +38,12 @@ public class Telefono_celular implements Producto, Movible, Telefono{
     public String getTipo(){
         return tipo;
     }
+    public String getSerie(){
+        return serie;
+    }
+    public String getMarcadorAR(){
+        return marcadorAR;
+    }
     public String mover(String lugar){
         return "Se ha movido el Telefono celular, de marca: "+marca+", hacia "+lugar+" (marcador AR: "+marcadorAR+")";
     }

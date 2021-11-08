@@ -41,6 +41,12 @@ public class Camara_fotografica implements Producto, Movible, Camara, Reproducto
     public String getTipo(){
         return tipo;
     }
+    public String getSerie(){
+        return serie;
+    }
+    public String getMarcadorAR(){
+        return marcadorAR;
+    }
     public String fotografiar(String objeto){
         return "Se ha fotografiado un@: "+objeto+" con Camara fotografica de marca"+marca+" (marcador AR: "+marcadorAR+")";
     }

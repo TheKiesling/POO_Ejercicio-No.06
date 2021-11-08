@@ -42,6 +42,12 @@ public class Laptop implements Producto, Movible, Reproductor, Navegador, Consol
     public String getTipo(){
         return tipo;
     }
+    public String getSerie(){
+        return serie;
+    }
+    public String getMarcadorAR(){
+        return marcadorAR;
+    }
     public String reproducir(String video){
         return "Se ha reproducido el video: "+video+" con Laptop de marca"+marca+" (marcador AR: "+marcadorAR+")";
     }

@@ -38,6 +38,12 @@ public class Smart_tv implements Producto, Navegador, Reproductor {
     public String getTipo(){
         return tipo;
     }
+    public String getSerie(){
+        return serie;
+    }
+    public String getMarcadorAR(){
+        return marcadorAR;
+    }
     public String reproducir(String video){
         return "Se ha reproducido el video: "+video+" con SmartTV de marca"+marca+" (marcador AR: "+marcadorAR+")";
     }

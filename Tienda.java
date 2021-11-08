@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.IOException;
 
@@ -20,6 +21,7 @@ public class Tienda {
     private File archivo = new File(".\\tienda.txt");
     private ArrayList<Producto> productos = new ArrayList<Producto>();
     private ArrayList<Producto> carrito = new ArrayList<Producto>();
+    private String texto = "";
     //---------------------------PROPIEDADES--------------------------
 
     /*****************************************************************
@@ -152,4 +154,22 @@ public class Tienda {
         carrito.remove(producto);
     }
     //******************************************************************
+
+    public void escribir() throws Exception{
+        try{
+            for (int i = 0; i < productos.size(); i++){
+                if(productos.get(i) != null){
+                    Producto producto = productos.get(i);
+                    texto += producto.getTipo() + ";" + producto.getMarca() + ";" + producto.getSerie() + ";" + producto.getFecha()+ ";" + producto.getPrecio() + ";" + producto.getMarcadorAR() + "\n";
+                }
+            }
+            FileWriter f = new FileWriter("tienda.txt"); //Escribir
+            f.write(texto);
+            f.close();
+        } 
+        catch (IOException e){
+            String s = "Tienda.escribir:" + e.getMessage() + " -- Algo ha pasado mal";
+			throw new Exception(s);
+        }
+    }
 }
