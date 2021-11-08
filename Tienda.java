@@ -181,13 +181,21 @@ public class Tienda {
         String nombre = cliente.getNombre();
         String nit = cliente.getNit();
         int precio=0;
-        String strfactura="Electrónica Latinoamericana, Sucursal "+sucursal+"\t\t"+fecha+"\nFactura No. "+nfactura+"\nFactura a nombre de: "+nombre+"NIT: "+nit+"\n";
+        String strfactura="Electrónica Latinoamericana, Sucursal "+sucursal+"\t\t"+fecha+"\nFactura No. "+nfactura+"\nFactura a nombre de: "+nombre+"     NIT: "+nit+"\n";
         for(int i=0; i<carrito.size(); i++){
             strfactura+="\n("+(i+1)+")  "+carrito.get(i).getTipo()+" ["+carrito.get(i).getMarca()+"] \t\tQ"+carrito.get(i).getPrecio();
             precio+=carrito.get(i).getPrecio();
             carrito.remove(i);
         }
-        strfactura+="Total: \t\t\tQ"+precio;
+        strfactura+="\nTotal: \t\t\tQ"+precio;
+        strfactura+="\n\n                                                     ,,                  ,,            \n";
+        strfactura+="  .g8\"\"\"bgd                                        `7MM                `7MM            \n";
+        strfactura+=".dP'     `M                                          MM                  MM            \n";
+        strfactura+="dM'       `  ,6\"Yb.  `7MMpMMMb.   ,p6\"bo   .gP\"Ya    MM   ,6\"Yb.    ,M\"\"bMM   ,pW\"Wq.  \n";
+        strfactura+="MM          8)   MM    MM    MM  6M'  OO  ,M'   Yb   MM  8)   MM  ,AP    MM  6W'   `Wb \n";
+        strfactura+="MM.          ,pm9MM    MM    MM  8M       8M\"\"\"\"\"\"   MM   ,pm9MM  8MI    MM  8M     M8 \n";
+        strfactura+="`Mb.     ,' 8M   MM    MM    MM  YM.    , YM.    ,   MM  8M   MM  `Mb    MM  YA.   ,A9 \n";
+        strfactura+="  `\"bmmmd'  `Moo9^Yo..JMML  JMML. YMbmd'   `Mbmmd' .JMML.`Moo9^Yo. `Wbmd\"MML. `Ybmd9'  ";
         return strfactura;
 
     }
