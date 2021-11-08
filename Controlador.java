@@ -42,25 +42,25 @@ public class Controlador {
                         producto = new Telefono_celular(marca,serie,fechaFabricacion,precio,marcadorAR);
                     }
                     if (opcionProducto == 3){
-                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                        producto = new Telefono_fijo(marca,serie,fechaFabricacion,precio,marcadorAR);
                     }
                     if (opcionProducto == 4){
-                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                        producto = new Camara_fotografica(marca,serie,fechaFabricacion,precio,marcadorAR);
                     }
                     if (opcionProducto == 5){
-                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                        producto = new Pc(marca,serie,fechaFabricacion,precio,marcadorAR);
                     }
                     if (opcionProducto == 6){
-                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                        producto = new Laptop(marca,serie,fechaFabricacion,precio,marcadorAR);
                     }
                     if (opcionProducto == 7){
-                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                        producto = new Smart_tv(marca,serie,fechaFabricacion,precio,marcadorAR);
                     }
                     if (opcionProducto == 8){
-                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                        producto = new Tablet(marca,serie,fechaFabricacion,precio,marcadorAR);
                     }
                     if (opcionProducto == 9){
-                        producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
+                        producto = new Smart_watch(marca,serie,fechaFabricacion,precio,marcadorAR);
                     }
                     tienda.ingresarProducto(producto);
                 }
