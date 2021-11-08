@@ -14,7 +14,7 @@ public class Telefono_fijo implements Producto, Telefono{
         tipo="Telefono Fijo";
     }
     public String[] funciones(){
-        String[] funciones={"Llamar"};
+        String[] funciones={"1. Llamar"};
         return funciones;
     }
     public String probar(int accion, String cosa){

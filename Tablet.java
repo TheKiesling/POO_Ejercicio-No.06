@@ -14,7 +14,7 @@ public class Tablet implements Producto, Movible, Camara, Navegador, Reproductor
         tipo="Tablet";
     }
     public String[] funciones(){
-        String[] funciones={"Mover", "Fotografiar", "Reproducir", "Navegar"};
+        String[] funciones={"1. Mover", "2. Fotografiar", "3. Reproducir", "4. Navegar"};
         return funciones;
     }
     public String probar(int accion, String cosa){

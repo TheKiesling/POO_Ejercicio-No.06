@@ -14,7 +14,7 @@ public class Laptop implements Producto, Movible, Reproductor, Navegador, Consol
         tipo="Laptop";
     }
     public String[] funciones(){
-        String[] funciones={"Reproducir","Mover", "Jugar", "Navegar"};
+        String[] funciones={"1. Reproducir","2. Mover", "3. Jugar", "4. Navegar"};
         return funciones;
     }
     public String probar(int accion, String cosa){

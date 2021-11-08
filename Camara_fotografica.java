@@ -15,7 +15,7 @@ public class Camara_fotografica implements Producto, Movible, Camara, Reproducto
 
     }
     public String[] funciones(){
-        String[] funciones={"Mover", "Fotografiar", "Reproducir"};
+        String[] funciones={"1. Mover", "2. Fotografiar", "3. Reproducir"};
         return funciones;
     }
     public String probar(int accion, String cosa){

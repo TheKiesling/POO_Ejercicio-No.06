@@ -14,7 +14,7 @@ public class Smart_watch implements Producto, Movible, Camara, Telefono{
         tipo="Smart Watch";
     }
     public String[] funciones(){
-        String[] funciones={"Mover", "Llamar", "Fotografiar"};
+        String[] funciones={"1. Mover", "2. Llamar", "3. Fotografiar"};
         return funciones;
     }
     public String probar(int accion, String cosa){

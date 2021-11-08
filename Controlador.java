@@ -66,7 +66,9 @@ public class Controlador {
                 }
 
                 if (opcion == 3){ //Probar producto
-                    int productoProbar = vista.menuOpcionesProducto()-1;
+                    String tiendaProductos = tienda.mostrarTienda();
+                    vista.mostrar(tiendaProductos);
+                    int productoProbar = vista.pedirProducto();
                     String[] funciones = tienda.funciones(productoProbar);
                     int accion = vista.pedirAccion(funciones);
                     String cosa = vista.pedirCosa(accion);

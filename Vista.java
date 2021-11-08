@@ -88,7 +88,7 @@ public class Vista {
             while (!bandera){ //Ciclo para evaluar si se ingresó una opcion válida
                 opcion = Integer.parseInt(scan.nextLine());
                 System.out.println();
-                if (opcion > 0 && opcion <= 7) //Opciones válidas
+                if (opcion > 0 && opcion <= 9) //Opciones válidas
                     bandera = true;
                 else{ 
                     System.out.println("ERROR: Ingrese una de las opciones indicadas anteriormente"); 
@@ -355,8 +355,8 @@ public class Vista {
 
         try{
             //Despliegue de menú de opciones 
-            System.out.println("Ingrese la acción que desea ejecutar"); 
-            System.out.println(acciones);
+            System.out.println("Ingrese el numero de la acción que desea ejecutar"); 
+            mostrar(acciones);
             
             while (!bandera){ //Ciclo para evaluar si se ingresó una opcion válida
                 opcion = Integer.parseInt(scan.nextLine());
@@ -387,18 +387,13 @@ public class Vista {
     public String pedirCosa(int accion) throws Exception{
         String cosa = "";
         try{
-            if(accion == 1)
-                System.out.println("Ingrese el objeto a fotografiar");
-            if(accion == 2)
-                System.out.println("Ingrese el juego a jugar");
-            if(accion == 3)
-                System.out.println("Ingrese el video a reproducir");
-            if(accion == 4)
-                System.out.println("Ingrese el numero a llamar");
-            if(accion == 5)
-                System.out.println("Ingrese el url para navegar");
-            if(accion == 6)
-                System.out.println("Ingrese la ubicacion para moverse");
+            System.out.println("Ingrese según la acción que ha hecho");
+            System.out.println("Fotografiar: Ingrese el objeto a fotografiar");
+            System.out.println("Jugar: Ingrese el juego a jugar");
+            System.out.println("Reproducir: Ingrese el video a reproducir");
+            System.out.println("Llamar: Ingrese el numero a llamar");
+            System.out.println("Navegar: Ingrese el url para navegar");
+            System.out.println("Mover: Ingrese la ubicacion para moverse");
             cosa = scan.nextLine();
             System.out.println(); 
         } catch (Exception e){ //Captura cualquier error que no sea de input

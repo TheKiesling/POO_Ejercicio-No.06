@@ -14,7 +14,7 @@ public class Telefono_celular implements Producto, Movible, Telefono{
         tipo="Telefono Celular";
     }
     public String[] funciones(){
-        String[] funciones={"Mover","Llamar"};
+        String[] funciones={"1. Mover","2. Llamar"};
         return funciones;
     }
     public String probar(int accion, String cosa){

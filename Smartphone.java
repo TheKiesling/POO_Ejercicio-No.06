@@ -14,7 +14,7 @@ public class Smartphone implements Producto, Movible, Telefono, Reproductor, Nav
         tipo="Smart Phone";
     }
     public String[] funciones(){
-        String[] funciones={"Mover","Llamar", "Fotografiar", "Reproducir", "Navegar"};
+        String[] funciones={"1. Mover","2. Llamar", "3. Fotografiar", "4. Reproducir", "5. Navegar"};
         return funciones;
     }
     public String probar(int accion, String cosa){

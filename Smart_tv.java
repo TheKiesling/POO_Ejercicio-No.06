@@ -14,7 +14,7 @@ public class Smart_tv implements Producto, Navegador, Reproductor {
         tipo="Smart TV";
     }
     public String[] funciones(){
-        String[] funciones={"Reproducir", "Navegar"};
+        String[] funciones={"1. Reproducir", "2. Navegar"};
         return funciones;
     }
     public String probar(int accion, String cosa){

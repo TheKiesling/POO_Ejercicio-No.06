@@ -14,7 +14,7 @@ public class Pc implements Producto, Reproductor, Navegador, Consola{
         tipo="PC";
     }
     public String[] funciones(){
-        String[] funciones={"Reproducir", "Jugar", "Navegar"};
+        String[] funciones={"1. Reproducir", "2. Jugar", "3. Navegar"};
         return funciones;
     }
     public String probar(int accion, String cosa){
