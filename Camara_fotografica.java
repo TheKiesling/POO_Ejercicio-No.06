@@ -56,4 +56,7 @@ public class Camara_fotografica implements Producto, Movible, Camara, Reproducto
     public String mover(String lugar){
         return "Se ha movido la Camara fotografica, de marca: "+marca+", hacia "+lugar+" (marcador AR: "+marcadorAR+")";
     }
+    public String toString(){
+        return "Producto: "+tipo+" ,Fecha Fabricacion: "+fechaFabricacion+" ,Marca:"+marca+" ,Precio:"+precio+"\n"; 
+    }
 }

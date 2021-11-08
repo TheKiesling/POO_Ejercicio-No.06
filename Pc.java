@@ -55,4 +55,7 @@ public class Pc implements Producto, Reproductor, Navegador, Consola{
     public String navegar(String url){
         return "Se ha iniciado el navegador en la pagina: "+url+"Con PC de marca: "+marca+ " (marcador AR: "+marcadorAR+")";
     }
+    public String toString(){
+        return "Producto: "+tipo+" ,Fecha Fabricacion: "+fechaFabricacion+" ,Marca:"+marca+" ,Precio:"+precio+"\n"; 
+    }
 }

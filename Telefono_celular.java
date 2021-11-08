@@ -50,4 +50,7 @@ public class Telefono_celular implements Producto, Movible, Telefono{
     public String llamar(String numero){
         return "Se ha llamado al numero: "+numero+"con Telefono celular de marca: "+marca+" (marcador AR: "+marcadorAR+")";
     }
+    public String toString(){
+        return "Producto: "+tipo+" ,Fecha Fabricacion: "+fechaFabricacion+" ,Marca:"+marca+" ,Precio:"+precio+"\n"; 
+    }
 }

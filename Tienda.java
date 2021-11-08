@@ -192,4 +192,16 @@ public class Tienda {
 
     }
     //******************************************************************
+
+    /*******************************************************************
+     * mostrarTienda: muestra la tienda y sus productos
+     * @return tienda
+     */
+    public String mostrarTienda(){
+        String tienda ="";
+        for (int i = 0; i < productos.size(); i++)
+            tienda += productos.get(i).toString() + "\n";
+        return tienda;
+    }
+    //******************************************************************
 }

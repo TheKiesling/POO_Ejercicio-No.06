@@ -75,6 +75,8 @@ public class Controlador {
                 }
 
                 if (opcion == 4){ //Agregar al carrito
+                    String tiendaProductos = tienda.mostrarTienda();
+                    vista.mostrar(tiendaProductos);
                     int productoAgregar = vista.pedirProducto();
                     tienda.agregarCarro(productoAgregar);
                 }

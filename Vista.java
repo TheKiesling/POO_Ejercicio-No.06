@@ -7,7 +7,7 @@ public class Vista {
     Nombre del programa: Vista.java
     @version: 
         - Creación: 5/11/2021
-        - Última modificación: 30/10/2021
+        - Última modificación: 8/11/2021
 
     Clase que tiene como fin ser un sistema I/O para la manipulación del programa
     */ 
@@ -31,6 +31,16 @@ public class Vista {
      */
     public void mostrar(String s){
         System.out.println(s);
+    }
+    //****************************************************************
+
+    /*****************************************************************
+     * mostrar: Muestra listas
+     * @param s
+     */
+    public void mostrar(String[] s){
+        for (int i = 0; i < s.length; i++)
+            System.out.println(s[i]);
     }
     //****************************************************************
 

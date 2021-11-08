@@ -55,4 +55,7 @@ public class Smart_watch implements Producto, Movible, Camara, Telefono{
     public String fotografiar(String objeto){
         return "Se ha fotografiado un@: "+objeto+" con SmartWatch de marca"+marca+" (marcador AR: "+marcadorAR+")";
     }
+    public String toString(){
+        return "Producto: "+tipo+" ,Fecha Fabricacion: "+fechaFabricacion+" ,Marca:"+marca+" ,Precio:"+precio+"\n"; 
+    }
 }

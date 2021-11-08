@@ -65,4 +65,7 @@ public class Smartphone implements Producto, Movible, Telefono, Reproductor, Nav
     public String navegar(String url){
         return "Se ha iniciado el navegador en la pagina: "+url+"Con SmartPhone de marca: "+marca+ " (marcador AR: "+marcadorAR+")";
     }
+    public String toString(){
+        return "Producto: "+tipo+" ,Fecha Fabricacion: "+fechaFabricacion+" ,Marca:"+marca+" ,Precio:"+precio+"\n"; 
+    }
 }
