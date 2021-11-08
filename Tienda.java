@@ -208,7 +208,7 @@ public class Tienda {
     public String mostrarTienda(){
         String tienda ="";
         for (int i = 0; i < productos.size(); i++)
-            tienda += i + productos.get(i).toString() + "\n";
+            tienda +="("+ i +") "+ productos.get(i).toString() + "\n";
         return tienda;
     }
     //******************************************************************
