@@ -32,44 +32,40 @@ public class Tienda {
     public void leerArchivo() throws IOException, Exception{
         try {
             BufferedReader br = new BufferedReader(new FileReader(archivo));
-            String[] datos = new String[1000000]; String[] datos_separados;
-            for(int i = 0; i < 9; i++){
-                while ((datos[i] = br.readLine()) != null){ //Lectura de archivo
-                    datos_separados = datos[i].split(";"); 
-                    for(int j = 0; j < Integer.parseInt(datos_separados[1]); j++){
+                String datos; String[] datos_separados;
+                    while ((datos = br.readLine()) != null){ //Lectura de archivo
+                        datos_separados = datos.split(";"); 
 
                         //Asignar valores
-                        String marca = datos_separados[2+5*j];
-                        String serie = datos_separados[3+5*j];
-                        String fechaFabricacion = datos_separados[4+5*j];
-                        int precio = Integer.parseInt(datos_separados[5+5*j]);
-                        String marcadorAR = datos_separados[6+5*j];
+                        String marca = datos_separados[1];
+                        String serie = datos_separados[2];
+                        String fechaFabricacion = datos_separados[3];
+                        int precio = Integer.parseInt(datos_separados[4]);
+                        String marcadorAR = datos_separados[5];
                         Producto producto = null;
 
                         //Instancia de producto
-                        if (i == 0) 
+                        if (datos_separados[0].equals("Smart Phone")) 
                             producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
-                        if (i == 1)
+                        if (datos_separados[0].equals("Telefono Celular"))
                             producto = new Telefono_celular(marca,serie,fechaFabricacion,precio,marcadorAR);
-                        if (i == 2) 
+                        if (datos_separados[0].equals("Telefono Fijo")) 
                             producto = new Telefono_fijo(marca,serie,fechaFabricacion,precio,marcadorAR);
-                        if (i == 3)
+                        if (datos_separados[0].equals("Camara Fotografica"))
                             producto = new Camara_fotografica(marca,serie,fechaFabricacion,precio,marcadorAR);
-                        if (i == 4) 
+                        if (datos_separados[0].equals("PC")) 
                             producto = new Pc(marca,serie,fechaFabricacion,precio,marcadorAR);
-                        if (i == 5)
+                        if (datos_separados[0].equals("Laptop"))
                             producto = new Laptop(marca,serie,fechaFabricacion,precio,marcadorAR);
-                        if (i == 6) 
+                        if (datos_separados[0].equals("Smart TV")) 
                             producto = new Smart_tv(marca,serie,fechaFabricacion,precio,marcadorAR);
-                        if (i == 7)
+                        if (datos_separados[0].equals("Tablet"))
                             producto = new Tablet(marca,serie,fechaFabricacion,precio,marcadorAR);
-                        if (i == 8) 
+                        if (datos_separados[0].equals("Smart Watch")) 
                             producto = new Smart_watch(marca,serie,fechaFabricacion,precio,marcadorAR);
 
                         ingresarProducto(producto);
                     }
-                }
-            }
         }
         catch (IOException e){
             String s = "tienda.leerArchivo:" + e.toString() + " Error de lectura";
