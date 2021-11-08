@@ -12,7 +12,7 @@ public class Tienda {
     Nombre del programa: Tienda.java
     @version: 
         - Creación: 06/11/2021
-        - Última modificación: 30/10/2021
+        - Última modificación: 08/11/2021
 
     Clase que tiene como fin ser un sistema I/O para la manipulación del programa
     */
@@ -108,9 +108,16 @@ public class Tienda {
      * @param cosa
      * @return accion
      */
-    public String probar(int producto, int accion, String cosa){
-        Producto productoProbar = productos.get(producto);
-        return productoProbar.probar(accion, cosa);
+    public String probar(int producto, int accion, String cosa) throws Exception{
+        String accionProducto = "";
+        try{
+            Producto productoProbar = productos.get(producto);
+            accionProducto = productoProbar.probar(accion, cosa);
+        } catch (Exception e){
+            String s = "Ingrese un número de producto valido o bien, ingrese productos a la tienda " +  producto + ": " + e.toString();
+            throw new Exception(s);
+        }
+        return accionProducto; 
     }
     //*****************************************************************
 
@@ -150,11 +157,20 @@ public class Tienda {
      * eliminarProducto: elimina un producto del carrito
      * @param producto
      */
-    public void eliminarProducto(int producto){
-        carrito.remove(producto);
+    public void eliminarProducto(int producto) throws Exception{
+        try{
+            carrito.remove(producto);
+        } catch (Exception e){
+            String s = "Ingrese un número de producto valido o bien, ingrese productos al carrito " +  producto + ": " + e.toString();
+            throw new Exception(s);
+        }
     }
     //******************************************************************
 
+    /*******************************************************************
+     * escribir: Escribe los datos en un archivo de texto
+     * @throws Exception
+     */
     public void escribir() throws Exception{
         try{
             for (int i = 0; i < productos.size(); i++){
@@ -172,6 +188,7 @@ public class Tienda {
 			throw new Exception(s);
         }
     }
+    //*****************************************************************
 
     /******************************************************************
      * factura: Crea el string de la factura por los objetos en el carrito de compras
@@ -181,21 +198,26 @@ public class Tienda {
         String nombre = cliente.getNombre();
         String nit = cliente.getNit();
         int precio=0;
-        String strfactura="Electrónica Latinoamericana, Sucursal "+sucursal+"\t\t"+fecha+"\nFactura No. "+nfactura+"\nFactura a nombre de: "+nombre+"     NIT: "+nit+"\n";
-        for(int i=0; i<carrito.size(); i++){
-            strfactura+="\n("+(i+1)+")  "+carrito.get(i).getTipo()+" ["+carrito.get(i).getMarca()+"] \t\tQ"+carrito.get(i).getPrecio();
-            precio+=carrito.get(i).getPrecio();
-            carrito.remove(i);
+        String strfactura = "";
+        if (carrito.size() <= 0){
+            strfactura = "Electrónica Latinoamericana, Sucursal "+sucursal+"\t\t"+fecha+"\nFactura No. "+nfactura+"\nFactura a nombre de: "+nombre+"     NIT: "+nit+"\n";
+            for(int i=0; i<carrito.size(); i++){
+                strfactura+="\n("+(i+1)+")  "+carrito.get(i).getTipo()+" ["+carrito.get(i).getMarca()+"] \t\tQ"+carrito.get(i).getPrecio();
+                precio+=carrito.get(i).getPrecio();
+                carrito.remove(i);
+            }
+            strfactura+="\nTotal: \t\t\tQ"+precio;
+            strfactura+="\n\n                                                     ,,                  ,,            \n";
+            strfactura+="  .g8\"\"\"bgd                                        `7MM                `7MM            \n";
+            strfactura+=".dP'     `M                                          MM                  MM            \n";
+            strfactura+="dM'       `  ,6\"Yb.  `7MMpMMMb.   ,p6\"bo   .gP\"Ya    MM   ,6\"Yb.    ,M\"\"bMM   ,pW\"Wq.  \n";
+            strfactura+="MM          8)   MM    MM    MM  6M'  OO  ,M'   Yb   MM  8)   MM  ,AP    MM  6W'   `Wb \n";
+            strfactura+="MM.          ,pm9MM    MM    MM  8M       8M\"\"\"\"\"\"   MM   ,pm9MM  8MI    MM  8M     M8 \n";
+            strfactura+="`Mb.     ,' 8M   MM    MM    MM  YM.    , YM.    ,   MM  8M   MM  `Mb    MM  YA.   ,A9 \n";
+            strfactura+="  `\"bmmmd'  `Moo9^Yo..JMML  JMML. YMbmd'   `Mbmmd' .JMML.`Moo9^Yo. `Wbmd\"MML. `Ybmd9'  ";
         }
-        strfactura+="\nTotal: \t\t\tQ"+precio;
-        strfactura+="\n\n                                                     ,,                  ,,            \n";
-        strfactura+="  .g8\"\"\"bgd                                        `7MM                `7MM            \n";
-        strfactura+=".dP'     `M                                          MM                  MM            \n";
-        strfactura+="dM'       `  ,6\"Yb.  `7MMpMMMb.   ,p6\"bo   .gP\"Ya    MM   ,6\"Yb.    ,M\"\"bMM   ,pW\"Wq.  \n";
-        strfactura+="MM          8)   MM    MM    MM  6M'  OO  ,M'   Yb   MM  8)   MM  ,AP    MM  6W'   `Wb \n";
-        strfactura+="MM.          ,pm9MM    MM    MM  8M       8M\"\"\"\"\"\"   MM   ,pm9MM  8MI    MM  8M     M8 \n";
-        strfactura+="`Mb.     ,' 8M   MM    MM    MM  YM.    , YM.    ,   MM  8M   MM  `Mb    MM  YA.   ,A9 \n";
-        strfactura+="  `\"bmmmd'  `Moo9^Yo..JMML  JMML. YMbmd'   `Mbmmd' .JMML.`Moo9^Yo. `Wbmd\"MML. `Ybmd9'  ";
+        else 
+            strfactura = "No tiene productos en su carrito";
         return strfactura;
 
     }
