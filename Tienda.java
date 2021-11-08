@@ -172,4 +172,24 @@ public class Tienda {
 			throw new Exception(s);
         }
     }
+
+    /******************************************************************
+     * factura: Crea el string de la factura por los objetos en el carrito de compras
+     */
+    public String factura(Cliente cliente, String sucursal, String fecha){
+        int nfactura=(int)(Math.random()*10000);
+        String nombre = cliente.getNombre();
+        String nit = cliente.getNit();
+        int precio=0;
+        String strfactura="Electrónica Latinoamericana, Sucursal "+sucursal+"\t\t"+fecha+"\nFactura No. "+nfactura+"\nFactura a nombre de: "+nombre+"NIT: "+nit+"\n";
+        for(int i=0; i<carrito.size(); i++){
+            strfactura+="\n("+(i+1)+")  "+carrito.get(i).getTipo()+" ["+carrito.get(i).getMarca()+"] \t\tQ"+carrito.get(i).getPrecio();
+            precio+=carrito.get(i).getPrecio();
+            carrito.remove(i);
+        }
+        strfactura+="Total: \t\t\tQ"+precio;
+        return strfactura;
+
+    }
+    //******************************************************************
 }

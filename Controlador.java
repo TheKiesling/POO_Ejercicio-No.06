@@ -33,7 +33,7 @@ public class Controlador {
                     String serie = vista.pedirSerie();
                     String marca = vista.pedirMarca();
                     String marcadorAR = vista.pedirMarcadorAR();
-                    String fechaFabricacion = vista.pedirFecha();
+                    String fechaFabricacion = vista.pedirFechaFabricacion();
                     int opcionProducto = vista.menuOpcionesProducto();
                     if (opcionProducto == 1){
                         producto = new Smartphone(marca,serie,fechaFabricacion,precio,marcadorAR);
@@ -66,7 +66,7 @@ public class Controlador {
                 }
 
                 if (opcion == 3){ //Probar producto
-                    int productoProbar = vista.pedirProducto();
+                    int productoProbar = vista.menuOpcionesProducto()-1;
                     String[] funciones = tienda.funciones(productoProbar);
                     int accion = vista.pedirAccion(funciones);
                     String cosa = vista.pedirCosa(accion);
@@ -92,9 +92,13 @@ public class Controlador {
                     tienda.eliminarProducto(productoEliminar);
                 }
 
-                if (opcion == 7){ //Comprar 
-                    int productoComprar = vista.pedirProducto();
-                    String factura = tienda.factura(productoComprar);
+                if (opcion == 7){ //Comprar
+                    String sucursal= vista.pedirSucursal();
+                    String nombre = vista.pedirNombre();
+                    String nit = vista.pedirNIT();
+                    String fecha= vista.pedirFecha();
+                    Cliente cliente = new Cliente(nombre, nit);
+                    String factura = tienda.factura(cliente, sucursal, fecha);
                     vista.mostrar(factura);
                 }
 

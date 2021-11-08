@@ -205,6 +205,25 @@ public class Vista {
     //****************************************************************
 
     /*****************************************************************
+     * pedirFecha: pide la fecha de hoy
+     * @return fecha
+     * @throws Exception
+     */
+    public String pedirFechaFabricacion() throws Exception{
+        String fecha = "";
+        try{
+            System.out.println("Ingrese la fecha de fabricacion (dd/mm/aaaa)");
+            fecha = scan.nextLine();
+            System.out.println(); 
+        } catch (Exception e){ //Captura cualquier error que no sea de input
+            String s = "Ocurrió un error con scan.nextLine() " +  fecha + ": " + e.toString();
+            throw new Exception(s);
+        }
+        return fecha;
+    }
+    //****************************************************************
+
+    /*****************************************************************
      * pedirPais: pide el Pais del cliente
      * @return NIT
      * @throws Exception
@@ -428,7 +447,7 @@ public class Vista {
         boolean bandera = false;
 
         try{
-            System.out.println("Ingrese el producto que quiere probar");
+            System.out.println("Ingrese el numero del producto");
         
             while (!bandera){ //Ciclo para evaluar si se ingresó un número correcto
                 producto = Integer.parseInt(scan.nextLine());
@@ -545,4 +564,21 @@ public class Vista {
         return lugar;
     }
     //****************************************************************
+
+    public String pedirSucursal() throws Exception{
+        String lugar = "";
+        try{
+            System.out.println("Ingrese el lugar de la sucursal:");
+            lugar = scan.nextLine();
+            System.out.println(); 
+        } catch (Exception e){ //Captura cualquier error que no sea de input
+            String s = "Ocurrió un error con scan.nextLine() " +  lugar + ": " + e.toString();
+            throw new Exception(s);
+        }
+        return lugar;
+    }
+    //****************************************************************
+
+
+
 }

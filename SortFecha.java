@@ -14,6 +14,6 @@ public class SortFecha implements Comparator<Producto>{
 
         }
 
-        return fecha1.compareTo(fecha2);
+        return -fecha1.compareTo(fecha2);
     }
 }
