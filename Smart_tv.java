@@ -1,3 +1,12 @@
+/**
+    @author: José Pablo Kiesling Lange & Andrés Estuardo Montoya Wilhelm
+    Nombre del programa: Smart_tv.java
+    @version: 
+        - Creación: 05/11/2021
+        - Última modificación: 07/11/2021
+
+    Clase que tiene como fin proporcionar las funciones y propiedades de una smart tv
+    */
 public class Smart_tv implements Producto, Navegador, Reproductor {
     int precio=0;
     String serie="";

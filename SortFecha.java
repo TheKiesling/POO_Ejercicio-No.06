@@ -1,4 +1,13 @@
 import java.text.ParseException;
+/**
+    @author: José Pablo Kiesling Lange & Andrés Estuardo Montoya Wilhelm
+    Nombre del programa: SortFecha.java
+    @version: 
+        - Creación: 07/11/2021
+        - Última modificación: 07/11/2021
+
+    Clase que tiene como fin comparar fechas
+    */
 import java.text.SimpleDateFormat;
 import java.util.Comparator;
 import java.util.Date;

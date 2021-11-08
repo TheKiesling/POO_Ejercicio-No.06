@@ -1,3 +1,12 @@
+/**
+    @author: José Pablo Kiesling Lange & Andrés Estuardo Montoya Wilhelm
+    Nombre del programa: Smart_watch.java
+    @version: 
+        - Creación: 05/11/2021
+        - Última modificación: 07/11/2021
+
+    Clase que tiene como fin proporcionar los metodos y funciones de un smart watch
+    */
 public class Smart_watch implements Producto, Movible, Camara, Telefono{
     int precio=0;
     String serie="";

@@ -1,3 +1,12 @@
+/**
+    @author: José Pablo Kiesling Lange & Andrés Estuardo Montoya Wilhelm
+    Nombre del programa: Camara_fotografica.java
+    @version: 
+        - Creación: 05/11/2021
+        - Última modificación: 07/11/2021
+
+    Clase que tiene como fin proporcionar datos y funciones de una camara fotografica
+    */
 public class Camara_fotografica implements Producto, Movible, Camara, Reproductor{
     int precio=0;
     String serie="";

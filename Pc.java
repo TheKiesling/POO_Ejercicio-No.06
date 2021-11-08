@@ -1,3 +1,12 @@
+/**
+    @author: José Pablo Kiesling Lange & Andrés Estuardo Montoya Wilhelm
+    Nombre del programa: Pc.java
+    @version: 
+        - Creación: 05/11/2021
+        - Última modificación: 07/11/2021
+
+    Clase que tiene como fin proporcionar los metodos y propiedades de una computadora de escritorio
+    */
 public class Pc implements Producto, Reproductor, Navegador, Consola{
     int precio=0;
     String serie="";

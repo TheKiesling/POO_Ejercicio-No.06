@@ -1,3 +1,13 @@
+
+/**
+    @author: José Pablo Kiesling Lange & Andrés Estuardo Montoya Wilhelm
+    Nombre del programa: Producto.java
+    @version: 
+        - Creación: 05/11/2021
+        - Última modificación: 07/11/2021
+
+    Interface que tiene como fin proporcionar las funciones abstractas de un producto
+    */
 public interface Producto{
     int precio=0;
     String serie="";
